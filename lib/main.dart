@@ -53,8 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 nameCaller: "Coding Is Life",
                 handle: "1234567890",
                 type: 1,
-                textMissedCall: "Missed call",
-                textCallback: "Call Back",
                 extra: {"userId":"1234fg"}
               );
               await FlutterCallkitIncoming.showMissCallNotification(params);
@@ -81,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 20,),
             //incoming call
             ElevatedButton(onPressed: ()async{
-              CallKitParams params=CallKitParams(
+              CallKitParams params=const CallKitParams(
                 id: "21232dgfgbcbgb",
                 nameCaller: "Coding Is Life",
                 appName: "Demo",
@@ -90,15 +88,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 type: 0,
                 textAccept: "Accept",
                 textDecline: "Decline",
-                textMissedCall: "Missed call",
-                textCallback: "Call back",
                 duration: 30000,
                 extra: {'userId':"sdhsjjfhuwhf"},
+                  missedCallNotification: NotificationParams(
+                    callbackText: "Call back",
+                    showNotification: false
+                  ),
                 android: AndroidParams(
                   isCustomNotification: true,
                   isShowLogo: false,
-                  isShowCallback: false,
-                  isShowMissedCallNotification: true,
                   ringtonePath: 'system_ringtone_default',
                   backgroundColor: "#0955fa",
                   backgroundUrl: "https://i.pravata.cc/500",
